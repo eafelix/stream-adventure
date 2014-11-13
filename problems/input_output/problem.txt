@@ -1,6 +1,5 @@
-Toma los datos de `process.stdin` y canalizalos a `process.stdout`.
+Take data from `process.stdin` and pipe it to `process.stdout`.
 
-Con  `.pipe()`. `process.stdin.pipe()` para ser exacto. 
+With `.pipe()`. `process.stdin.pipe()` to be exact.
 
-No lo sobre pienses esto.
-
+Don't overthink this.
