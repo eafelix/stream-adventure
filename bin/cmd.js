@@ -77,10 +77,10 @@ if (argv._[0] === 'verify' || argv._[0] === 'run') {
     
     function onpass () {
         console.log('# PASS');
-        console.log('\nYour solution to ' + current + ' passed!');
+        console.log('\nTu solucion a ' + current + ' es correcta!');
         console.log(
-            '\nHere\'s what the official solution'
-            + ' is if you want to compare notes:\n'
+            '\nAqui esta la solucion oficial'
+            + ' si quieres comparar notas:\n'
         );
         var src = fs.readFileSync(path.join(dir, 'solution.js'), 'utf8');
         src.split('\n').forEach(function (line) {
@@ -97,11 +97,11 @@ if (argv._[0] === 'verify' || argv._[0] === 'run') {
         
         var remaining = order.length - completed.length;
         if (remaining === 0) {
-            console.log("You've finished all the challenges! Hooray!\n");
+            console.log("Terminaste todos los desafios! Hooray!\n");
         }
         else {
-            console.log('You have ' + remaining + ' challenges left.');
-            console.log('Type `stream-adventure` to show the menu.\n');
+            console.log('Tu tienes ' + remaining + ' desafios por hacer.');
+            console.log('Tipea `stream-adventure` para ver el menu.\n');
         }
         
         if (setup.close) setup.close();
@@ -112,9 +112,9 @@ if (argv._[0] === 'verify' || argv._[0] === 'run') {
         
         console.log('# FAIL');
         console.log(
-            "\nYour solution didn't match the expected output."
-            + '\nTry again, or run `stream-adventure run program.js`'
-            + ' to see your solution\'s output.'
+            "\nTu solucion no da la salida del programa esperada."
+            + '\nPrueba nuevamente, o ejecuta `stream-adventure run tuPrograma.js`'
+            + ' para ver la salida de tu programa.'
         );
         exitCode = 1;
     }
@@ -145,8 +145,8 @@ else {
 function getCurrentProblem() {
     var current = getData('current');
     if (!current) {
-        console.error('ERROR: No active problem. '
-                + 'Select a challenge from the menu.'
+        console.error('ERROR: No hay problema activo. '
+                + 'Selecciona una aventura del menu.'
         );
         return process.exit(1);
     }
@@ -164,8 +164,8 @@ function printProblem(name) {
     var rs = fs.createReadStream(file);
     rs.on('close', function () {
         console.log(
-                '\nTo verify your program, run: '
-                + '`stream-adventure verify program.js`.\n'
+                '\nPara verificar tu programa, ejecuta: '
+                + '`stream-adventure verify tuPrograma.js`.\n'
         );
     });
     rs.pipe(process.stdout);
